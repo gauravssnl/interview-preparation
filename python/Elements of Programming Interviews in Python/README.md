@@ -1,4 +1,5 @@
 # Primitive Types
+
 1. Count number of bits that are set to 1.
 
 ```python
@@ -57,4 +58,24 @@ and reorder operations.
 
 * The key methods in random are `random.randrange(40)` , `random.randint(10, 18)` ,
 `random.random()`, `random.shuffle(A)` , and `random.choice(A)` .
+
+2. Computing the parity of the word.
+
+    a) Brute-force Algorithm : Time Complexity : O(n)
+    ```python
+    def parity(x):
+        result = 0 # store count of 1's in the number
+        while x:
+            result ^= x & 1
+            x >>= 1
+        return result
+
+
+    if __name__ == "__main__":
+        num = 11
+        print("num: {0} , binary: {0:b}, partity: {1}".format(num, parity(11)))
+
+        binary_num = 10001000
+        print("binary: {}, num: {} , parity: {}".format(binary_num, int(str(binary_num), 2), parity(11)))
+    ``` 
 
